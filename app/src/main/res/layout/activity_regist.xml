@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistActivity">
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/et_regist_user"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:hint="请输入你的账号"/>
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/et_regist_password"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:hint="请输入你的密码"/>
+    <Button
+        android:id="@+id/bt_regist_save"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="注册"/>
+    <Button
+        android:id="@+id/bt_regist_cancel"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="返回登陆"/>
+</LinearLayout>
