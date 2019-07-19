@@ -26,7 +26,7 @@ import cn.bmob.v3.listener.SaveListener;
 public class LoginActivity extends Activity implements OnClickListener {
     TextView tv_regist;
     EditText et_login_user, et_login_password;
-    Button bt_login;
+    Button bt_login,cela;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -43,8 +43,10 @@ public class LoginActivity extends Activity implements OnClickListener {
         bt_login = (Button) findViewById(R.id.login);
         et_login_user = (EditText) findViewById(R.id.et_login_user);
         et_login_password = (EditText) findViewById(R.id.et_login_password);
+        cela=(Button)findViewById(R.id.cela);
         tv_regist.setOnClickListener(LoginActivity.this);
         bt_login.setOnClickListener(LoginActivity.this);
+        cela.setOnClickListener(LoginActivity.this);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -93,6 +95,10 @@ public class LoginActivity extends Activity implements OnClickListener {
                     }
                 });
 
+                break;
+            case R.id.cela:
+                Intent intent_cela = new Intent(LoginActivity.this, Main2Activity.class);
+                startActivity(intent_cela);
                 break;
         }
     }

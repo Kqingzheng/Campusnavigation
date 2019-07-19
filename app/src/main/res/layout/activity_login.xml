@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/p3"
     tools:context=".LoginActivity">
 
     <EditText
@@ -38,5 +39,12 @@
         android:gravity="center"
         android:text="注册"
         android:textSize="20dp" />
+    <Button
+        android:id="@+id/cela"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="llll"/>
 
 </LinearLayout>
