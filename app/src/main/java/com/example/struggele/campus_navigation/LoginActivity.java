@@ -43,10 +43,10 @@ public class LoginActivity extends Activity implements OnClickListener {
         bt_login = (Button) findViewById(R.id.login);
         et_login_user = (EditText) findViewById(R.id.et_login_user);
         et_login_password = (EditText) findViewById(R.id.et_login_password);
-        cela=(Button)findViewById(R.id.cela);
+        //cela=(Button)findViewById(R.id.cela);
         tv_regist.setOnClickListener(LoginActivity.this);
         bt_login.setOnClickListener(LoginActivity.this);
-        cela.setOnClickListener(LoginActivity.this);
+        //cela.setOnClickListener(LoginActivity.this);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         //client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -82,7 +82,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                         if(e==null){
                             //ToastUtils.toast(LoginActivity.this, " 登录成功");
                             Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-                            Intent intent_main = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent_main = new Intent(LoginActivity.this, Main2Activity.class);
                             startActivity(intent_main);
                             //通过BmobUser user = BmobUser.getCurrentUser()获取登录成功后的本地用户信息
                             //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(MyUser.class)获取自定义用户信息
@@ -96,10 +96,10 @@ public class LoginActivity extends Activity implements OnClickListener {
                 });
 
                 break;
-            case R.id.cela:
-                Intent intent_cela = new Intent(LoginActivity.this, Main2Activity.class);
-                startActivity(intent_cela);
-                break;
+//            case R.id.cela:
+//                Intent intent_cela = new Intent(LoginActivity.this, Main2Activity.class);
+//                startActivity(intent_cela);
+//                break;
         }
     }
 

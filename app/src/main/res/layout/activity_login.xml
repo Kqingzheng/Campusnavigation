@@ -21,30 +21,37 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
+        android:inputType="textPassword"
         android:hint="请输入密码"/>
+
     <Button
         android:id="@+id/login"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:text="登录"/>
+        android:background="@drawable/shape_2"
+        android:gravity="center"
+        android:text="登    录"
+        android:textSize="20dp"
+        />
 
     <TextView
         android:id="@+id/tv_regist"
-        android:layout_width="100dp"
-        android:layout_height="51dp"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:gravity="center"
-        android:text="注册"
+        android:background="@drawable/shape_2"
+        android:text="注   册"
         android:textSize="20dp" />
-    <Button
-        android:id="@+id/cela"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="llll"/>
+    <!--<Button-->
+        <!--android:id="@+id/cela"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:text="llll"/>-->
 
 </LinearLayout>

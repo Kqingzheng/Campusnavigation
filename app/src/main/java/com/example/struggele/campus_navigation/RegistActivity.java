@@ -33,7 +33,7 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
         et_regist_password= (EditText) findViewById(R.id.et_regist_password);
         bt_regist_save= (Button) findViewById(R.id.bt_regist_save);
         bt_regist_cancel= (Button) findViewById(R.id.bt_regist_cancel);
-        regist_imageview=(ImageView)findViewById(R.id.regist_imageview);
+       // regist_imageview=(ImageView)findViewById(R.id.regist_imageview);
         bt_regist_save.setOnClickListener(this);
         bt_regist_cancel.setOnClickListener(this);
 
@@ -49,7 +49,7 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.bt_regist_save:
                 String user_num=et_regist_user.getText().toString();
                 String user_password=et_regist_password.getText().toString().trim();
-                ImageView user_imageview=regist_imageview;
+                //ImageView user_imageview=regist_imageview;
                 // 非空验证
                 if (user_num.isEmpty() || user_password.isEmpty()) {
                     Toast.makeText(RegistActivity.this, "密码或账号不能为空!",

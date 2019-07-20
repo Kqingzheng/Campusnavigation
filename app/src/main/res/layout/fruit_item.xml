@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/fruit_name1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="clip_vertical"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/fruit_name2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="clip_vertical"
+        android:textSize="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginLeft="10dp"/>
+    <ImageView
+        android:id="@+id/fruit_image"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="clip_vertical"
+        android:layout_marginLeft="10dp"
+        />
+
+</LinearLayout>
