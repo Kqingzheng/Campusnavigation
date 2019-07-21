@@ -28,7 +28,7 @@ public class AnimationActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {	//当动画结束后就跳转到其他活动中
-                Intent intent=new Intent(AnimationActivity.this, LoginActivity.class);
+                Intent intent=new Intent(AnimationActivity.this,GuideActivity.class);
                 startActivity(intent);
             }
 

@@ -84,6 +84,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                             Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                             Intent intent_main = new Intent(LoginActivity.this, Main2Activity.class);
                             startActivity(intent_main);
+                            finish();
                             //通过BmobUser user = BmobUser.getCurrentUser()获取登录成功后的本地用户信息
                             //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(MyUser.class)获取自定义用户信息
                         }else{

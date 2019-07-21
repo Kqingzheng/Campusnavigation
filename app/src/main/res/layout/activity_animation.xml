@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AnimationActivity"
     android:id="@+id/activity_animation"
-    android:background="@drawable/p1">
+    android:background="@drawable/heida3">
 
 </RelativeLayout>

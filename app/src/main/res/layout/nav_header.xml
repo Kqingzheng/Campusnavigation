@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="tongreendev@gmail.com"
+        android:text="欢迎回来"
         android:textColor="#FFF"
         android:textSize="14sp"/>
     <TextView
@@ -25,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/mail"
-        android:text="Tony green"
+        android:text="黑大人"
         android:textColor="#FFF"
         android:textSize="14sp"/>
 </RelativeLayout>

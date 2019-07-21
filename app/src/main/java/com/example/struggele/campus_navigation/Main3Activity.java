@@ -1,13 +1,17 @@
 package com.example.struggele.campus_navigation;
 
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import com.google.gson.Gson;
 
@@ -28,10 +32,13 @@ public class Main3Activity extends AppCompatActivity {
     String s;
     History his;
     UIThread thread;
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+        Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
         initData();
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(layoutManager);
@@ -48,10 +55,13 @@ public class Main3Activity extends AppCompatActivity {
             recyclerView.setAdapter(adapter2);
         }
     }
-
+//    public boolean onCreateOptionsMenu(Menu menu){
+//        getMenuInflater().inflate(R.menu.toolbar,menu);
+//        return true;
+//    }
     private void initData() {
         OkHttpClient client = new OkHttpClient();
-        String url = CONFIG.API.URL;
+        String url = CONFIG.API.URL1;
         final Request request = new Request.Builder()
                 .url(url)
                 .get()

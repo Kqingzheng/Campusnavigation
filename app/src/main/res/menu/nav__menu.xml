@@ -4,19 +4,19 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/nav_home"
-            android:title="Home"/>
+            android:title="回忆历史"/>
         <item
             android:id="@+id/nav_me"
             android:icon="@drawable/nav_me"
-            android:title="Me"/>
+            android:title="黑大有我"/>
         <item
             android:id="@+id/nav_trip"
             android:icon="@drawable/nav_trip"
-            android:title="Trip"/>
+            android:title="百度一下"/>
         <item
             android:id="@+id/nav_wallet"
             android:icon="@drawable/nav_wallet"
-            android:title="Wallet"/>
+            android:title="一个彩蛋"/>
 
     </group>
 </menu>
