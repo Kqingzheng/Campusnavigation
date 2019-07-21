@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/day1"
+        android:icon="@drawable/icon3"
+        android:title="7月22日"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/day2"
+        android:icon="@drawable/icon3"
+        android:title="7月23日"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/day3"
+        android:icon="@drawable/icon3"
+        android:title="7月24日"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/day4"
+        android:icon="@drawable/icon3"
+        android:title="7月25日"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/day5"
+        android:icon="@drawable/icon3"
+        android:title="7月26日"
+        app:showAsAction="never"
+        />
+</menu>

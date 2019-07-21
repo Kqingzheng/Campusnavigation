@@ -1,8 +1,10 @@
 package com.example.struggele.campus_navigation;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.multidex.MultiDexApplication;
@@ -21,7 +23,21 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Main2Activity extends AppCompatActivity {
+import com.bumptech.glide.Glide;
+
+import java.io.File;
+import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+import pub.devrel.easypermissions.EasyPermissions;
+
+public class Main2Activity extends AppCompatActivity implements View.OnClickListener, EasyPermissions.PermissionCallbacks {
+    private NavigationView navView;
+    private View headview;
+    CircleImageView cimage;
+    private File cameraSavePath;//拍照照片路径
+    private Uri uri;
+    private String[] permissions = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
     private long firstTime = 0;//判断退出程序
     private DrawerLayout mDrawerLayout;
    // WebView webView;
@@ -30,6 +46,9 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
+        navView=findViewById(R.id.nav_view);
+        headview=navView.inflateHeaderView(R.layout.nav_header);
+        cimage=(CircleImageView)headview.findViewById(R.id.lu);
         setSupportActionBar(toolbar);
         Button button=(Button)findViewById(R.id.bu_heida);
         button.setOnClickListener(new View.OnClickListener() {
@@ -39,18 +58,21 @@ public class Main2Activity extends AppCompatActivity {
                 startActivity(intent_cela2);
             }
         });
+        cimage.setOnClickListener(this);
 
 //        webView=(WebView)findViewById(R.id.webview);
 //        webView.getSettings().setJavaScriptEnabled(true);
 //        webView.setWebViewClient(new MyWebViewClient());
 //        webView.loadUrl("http://www.baidu.com");
         mDrawerLayout=(DrawerLayout)findViewById(R.id.asas);
-        NavigationView navView=(NavigationView)findViewById(R.id.nav_view);
+        //navView=(NavigationView)findViewById(R.id.nav_view);
         ActionBar actionBar=getSupportActionBar();
         if(actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.icon41);
         }
+        cameraSavePath = new File(Environment.getExternalStorageDirectory().getPath() + "/" + System.currentTimeMillis() + ".jpg");
+
         navView.setCheckedItem(R.id.nav_home);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -76,6 +98,83 @@ public class Main2Activity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id) {
+            case R.id.lu:
+                goPhotoAlbum();
+                getPermission();
+                break;
+
+        }
+    }
+    //获取权限
+    private void getPermission() {
+        if (EasyPermissions.hasPermissions(this, permissions)) {
+            //已经打开权限
+            //Toast.makeText(this, "已经申请相关权限", Toast.LENGTH_SHORT).show();
+        } else {
+            //没有打开相关权限、申请权限
+            EasyPermissions.requestPermissions(this, "需要获取您的相册、照相使用权限", 1, permissions);
+        }
+
+    }
+
+
+    //激活相册操作
+    private void goPhotoAlbum() {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, 2);
+    }
+
+    //激活相机操作
+//    private void goCamera() {
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+//            uri = FileProvider.getUriForFile(MainActivity.this, "com.example.hxd.pictest.fileprovider", cameraSavePath);
+//            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//        } else {
+//            uri = Uri.fromFile(cameraSavePath);
+//        }
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
+//        MainActivity.this.startActivityForResult(intent, 1);
+//    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //框架要求必须这么写
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+
+    //成功打开权限
+    @Override
+    public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
+
+        Toast.makeText(this, "相关权限获取成功", Toast.LENGTH_SHORT).show();
+    }
+    //用户未同意权限
+    @Override
+    public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
+        Toast.makeText(this, "请同意相关权限，否则功能无法使用", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        String photoPath;
+        if (requestCode == 2 && resultCode == RESULT_OK) {
+            photoPath = getPhotoFromPhotoAlbum.getRealPathFromUri(this, data.getData());
+            Glide.with(Main2Activity.this).load(photoPath).into(cimage);
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
     }
 //    /**
 //     * 防止有 URL Scheme 跳转协议类型的url 导致webView加载网页失败

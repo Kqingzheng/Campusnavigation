@@ -14,6 +14,8 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--调用相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".MyApplication"
@@ -30,7 +32,7 @@
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.cameraalbumtest.fileprovider"
+            android:authorities="com.example.struggele.campus_navigation.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

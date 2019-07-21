@@ -1,6 +1,8 @@
 package com.example.struggele.campus_navigation;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -81,7 +83,7 @@ public class LoginActivity extends Activity implements OnClickListener {
                     public void done(BmobUser bmobUser, BmobException e) {
                         if(e==null){
                             //ToastUtils.toast(LoginActivity.this, " 登录成功");
-                            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
                             Intent intent_main = new Intent(LoginActivity.this, Main2Activity.class);
                             startActivity(intent_main);
                             finish();
@@ -89,8 +91,23 @@ public class LoginActivity extends Activity implements OnClickListener {
                             //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(MyUser.class)获取自定义用户信息
                         }else{
                             //ToastUtils.toast(LoginActivity.this, " 登录失败");
-                            Toast.makeText(LoginActivity.this," 登录失败", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(LoginActivity.this," 登陆失败", Toast.LENGTH_SHORT).show();
                             //loge(e);
+                            AlertDialog.Builder dialog1=new AlertDialog.Builder( LoginActivity.this);
+                            dialog1.setTitle("警告！");
+                            dialog1.setMessage("用户名或密码输入错误");
+                            dialog1.setCancelable(false);
+                            dialog1.setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+                            dialog1.setNegativeButton("关闭", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            });
+                            dialog1.show();
 
                         }
                     }

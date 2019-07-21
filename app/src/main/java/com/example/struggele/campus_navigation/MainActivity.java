@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements LocationSource, A
         // 设置圆形的边框颜色
         myLocationStyle.strokeColor(Color.argb(255, 0, 255, 255));
         // 设置圆形的填充颜色
-        myLocationStyle.radiusFillColor(Color.argb(100, 255, 182, 193));// 设置圆形的填充颜色
+        myLocationStyle.radiusFillColor(Color.argb(100, 26, 141, 31));// 设置圆形的填充颜色
 
         //获取地图控件引用
         mapView = (MapView) findViewById(R.id.map);

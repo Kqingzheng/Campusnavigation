@@ -46,7 +46,7 @@
     <WebView
         android:id="@+id/mywebview"
         android:layout_width="378dp"
-        android:layout_height="490dp"
+        android:layout_height="590dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -67,7 +67,7 @@
         android:layout_height="96dp"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/sure"
+        android:background="@drawable/icon6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
