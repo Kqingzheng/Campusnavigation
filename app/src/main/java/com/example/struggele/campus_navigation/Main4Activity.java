@@ -43,7 +43,7 @@ public class Main4Activity extends AppCompatActivity {
                 }
                 if(Build.VERSION.SDK_INT>=24){
                     imageUri= FileProvider.getUriForFile(Main4Activity.this,
-                            "com.example.cameraalbumtest.fileprovider",outputImage);
+                            "com.example.struggele.campus_navigation.fileprovider",outputImage);
                 }else{
                     imageUri=Uri.fromFile(outputImage);
                 }

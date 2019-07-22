@@ -17,7 +17,7 @@
     <item
         android:id="@+id/settings"
         android:icon="@drawable/icon3"
-        android:title="返回登陆"
+        android:title="返回登录"
         app:showAsAction="never"
         />
 </menu>

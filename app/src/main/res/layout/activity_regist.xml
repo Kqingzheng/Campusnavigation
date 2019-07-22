@@ -38,6 +38,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:background="@drawable/shape_4"
-        android:text="返回登陆" />
+        android:text="返回登录" />
 
 </LinearLayout>

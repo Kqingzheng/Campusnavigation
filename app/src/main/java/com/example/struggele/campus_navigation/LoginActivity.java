@@ -4,11 +4,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +32,14 @@ public class LoginActivity extends Activity implements OnClickListener {
     TextView tv_regist;
     EditText et_login_user, et_login_password;
     Button bt_login,cela;
+
+    private SharedPreferences preferences;
+
+    private SharedPreferences.Editor editor;
+
+    private CheckBox rememberPass;
+
+
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -45,6 +56,17 @@ public class LoginActivity extends Activity implements OnClickListener {
         bt_login = (Button) findViewById(R.id.login);
         et_login_user = (EditText) findViewById(R.id.et_login_user);
         et_login_password = (EditText) findViewById(R.id.et_login_password);
+        rememberPass=(CheckBox)findViewById(R.id.remember_pass);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isRemember = preferences.getBoolean("remember_password", false);
+        if (isRemember){
+            String account = preferences.getString("account", "");
+            String password= preferences.getString("password", "");
+            et_login_user.setText(account);
+            et_login_password.setText(password);
+            rememberPass.setChecked(true);
+        }
+
         //cela=(Button)findViewById(R.id.cela);
         tv_regist.setOnClickListener(LoginActivity.this);
         bt_login.setOnClickListener(LoginActivity.this);
@@ -83,7 +105,8 @@ public class LoginActivity extends Activity implements OnClickListener {
                     public void done(BmobUser bmobUser, BmobException e) {
                         if(e==null){
                             //ToastUtils.toast(LoginActivity.this, " 登录成功");
-                            Toast.makeText(LoginActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
+                            saveAccount();
+                            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
                             Intent intent_main = new Intent(LoginActivity.this, Main2Activity.class);
                             startActivity(intent_main);
                             finish();
@@ -120,6 +143,20 @@ public class LoginActivity extends Activity implements OnClickListener {
 //                break;
         }
     }
+    private void saveAccount(){
+        String account  = et_login_user.getText().toString();
+        String password = et_login_password.getText().toString();
+        editor = preferences.edit();
+        if (rememberPass.isChecked()){
+            editor.putString("account", account);
+            editor.putString("password", password);
+            editor.putBoolean("remember_password", true);
+        }else {
+            editor.clear();
+        }
+        editor.apply();
+    }
+
 
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
