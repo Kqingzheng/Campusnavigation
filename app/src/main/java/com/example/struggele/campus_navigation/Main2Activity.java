@@ -3,6 +3,9 @@ package com.example.struggele.campus_navigation;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -14,6 +17,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +26,8 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -29,12 +36,14 @@ import java.io.File;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import jp.wasabeef.glide.transformations.BlurTransformation;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener, EasyPermissions.PermissionCallbacks {
     private NavigationView navView;
     private View headview;
     CircleImageView cimage;
+    ImageView nav_header_image;
     private File cameraSavePath;//拍照照片路径
     private Uri uri;
     private String[] permissions = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
@@ -49,6 +58,20 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         navView=findViewById(R.id.nav_view);
         headview=navView.inflateHeaderView(R.layout.nav_header);
         cimage=(CircleImageView)headview.findViewById(R.id.lu);
+        nav_header_image=(ImageView)headview.findViewById(R.id.nav_header_imageview);
+        Resources res = getResources();
+        Bitmap scaledBitmap = BitmapFactory.decodeResource(res, R.drawable.lu);
+
+        //        scaledBitmap为目标图像，10是缩放的倍数（越大模糊效果越高）
+        Bitmap blurBitmap = FastBlurUtil.toBlur(scaledBitmap, 10);
+        nav_header_image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        nav_header_image.setImageBitmap(blurBitmap);
+
+
+//        Glide.with(Main2Activity.this)
+//                .load(R.drawable.lu)
+//                .bitmapTransform(new BlurTransformation(Main2Activity.this,20,2))
+//                .into(nav_header_image);
         setSupportActionBar(toolbar);
         Button button=(Button)findViewById(R.id.bu_heida);
         button.setOnClickListener(new View.OnClickListener() {
@@ -168,10 +191,30 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        String photoPath;
+        final String photoPath;
         if (requestCode == 2 && resultCode == RESULT_OK) {
             photoPath = getPhotoFromPhotoAlbum.getRealPathFromUri(this, data.getData());
             Glide.with(Main2Activity.this).load(photoPath).into(cimage);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    int scaleRatio = 10;
+                    //                        下面的这个方法必须在子线程中执行
+                    final Bitmap blurBitmap2 = FastBlurUtil.GetUrlBitmap(photoPath, scaleRatio);
+
+                                          //  刷新ui必须在主线程中执行
+                    MyApplication.runOnUIThread(new Runnable() {//这个是我自己封装的在主线程中刷新ui的方法。
+                        @Override
+                        public void run() {
+                            Log.v("asd",photoPath);
+//                            nav_header_image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//                            nav_header_image.setImageBitmap(blurBitmap2);
+                            Glide.with(Main2Activity.this).load(photoPath).into(nav_header_image);
+
+                        }
+                    });
+                }
+            }).start();
         }
 
         super.onActivityResult(requestCode, resultCode, data);
