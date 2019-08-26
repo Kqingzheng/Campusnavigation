@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class AnimationActivity extends AppCompatActivity {
 
@@ -15,8 +17,11 @@ public class AnimationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_animation);
         RelativeLayout layoutsplash=(RelativeLayout)findViewById(R.id.activity_animation);//布局文件是相对布局
+        TextView textView=(TextView)findViewById(R.id.ani_textview);
+        Animation animation = AnimationUtils.loadAnimation(AnimationActivity.this,R.anim.view_anim);
+        textView.startAnimation(animation);
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.1f,1.0f);
-        alphaAnimation.setDuration(1900);
+        alphaAnimation.setDuration(2500);
 
         layoutsplash.startAnimation(alphaAnimation);
         //设置动画监听

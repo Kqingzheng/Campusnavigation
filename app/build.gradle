@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android{
 
     compileSdkVersion 28
+    buildToolsVersion "28.0.3"  //导入项目不匹配可以调version
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.example.struggele.campus_navigation"
