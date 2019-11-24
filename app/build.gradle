@@ -18,6 +18,13 @@ android{
             abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86", "arm64-v8a", "x86_64"
         }
     }
+
+    packagingOptions {
+
+        exclude 'assets/location_map_gps_locked.png'
+        exclude 'assets/location_map_gps_3d.png'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
