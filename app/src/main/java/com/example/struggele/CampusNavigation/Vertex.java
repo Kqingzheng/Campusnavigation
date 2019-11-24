@@ -1,4 +1,4 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 public class Vertex {
 

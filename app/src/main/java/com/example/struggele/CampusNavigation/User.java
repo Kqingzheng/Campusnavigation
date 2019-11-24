@@ -1,12 +1,6 @@
-package com.example.struggele.campus_navigation;
-
-import android.widget.ImageView;
-
-import java.util.List;
+package com.example.struggele.CampusNavigation;
 
 import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.datatype.BmobGeoPoint;
 
 public class User extends BmobUser {
     private Boolean sex;

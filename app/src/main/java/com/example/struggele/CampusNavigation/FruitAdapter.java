@@ -1,4 +1,4 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.annotation.SuppressLint;
 import android.content.ContentUris;

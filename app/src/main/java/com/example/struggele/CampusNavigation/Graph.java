@@ -1,4 +1,4 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 import com.amap.api.maps.model.LatLng;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class Graph {
         this.Matrix[j][i] = weight;
     }
     public void GraphBuild(){
-        this.setVexNum(28);                       //定义顶点个数
+        this.setVexNum(55);                       //定义顶点个数
         this.Vexs = new Vertex[this.VexsNum];
         this.Matrix = new int[this.VexsNum][this.VexsNum];
 
@@ -62,6 +62,35 @@ public class Graph {
         Vexs[26] = new Vertex("体育场k12");
         Vexs[27] = new Vertex("一号楼k13");
 
+        Vexs[28] = new Vertex("b超右");
+        Vexs[29] = new Vertex("b超");
+        Vexs[30] = new Vertex("排球场");
+        Vexs[31] = new Vertex("排左");
+        Vexs[32] = new Vertex("b食左中");
+        Vexs[33] = new Vertex("b食左上");
+        Vexs[34] = new Vertex("b食");
+        Vexs[35] = new Vertex("b食堂左中左");
+        Vexs[36] = new Vertex("化学楼");
+        Vexs[37] = new Vertex("排左下");
+        Vexs[38] = new Vertex("生左上");
+        Vexs[39] = new Vertex("生命");
+        Vexs[40] = new Vertex("农右上");
+        Vexs[41] = new Vertex("农学楼");
+        Vexs[42] = new Vertex("a食");
+        Vexs[43] = new Vertex("a食左");
+        Vexs[44] = new Vertex("新图");
+        Vexs[45] = new Vertex("新图下");
+        Vexs[46] = new Vertex("博物馆");
+        Vexs[47] = new Vertex("博物馆左");
+        Vexs[48] = new Vertex("新图左");
+        Vexs[49] = new Vertex("新图下下");
+        Vexs[50] = new Vertex("b食左上上上");
+        Vexs[51] = new Vertex("化左上");
+        Vexs[52] = new Vertex("2号楼下");
+        Vexs[53] = new Vertex("网球场左下");
+        Vexs[54] = new Vertex("网球场");
+
+
         Vexs[0].input(45.708027,126.613903);
         Vexs[1].input(45.708196,126.614702);
         Vexs[2].input(45.707297,126.614901);
@@ -90,6 +119,34 @@ public class Graph {
         Vexs[25].input(45.707772,126.619316);
         Vexs[26].input(45.708223,126.619815);
         Vexs[27].input(45.708223,126.618404);
+
+        Vexs[28].input(45.706418,126.62343);
+        Vexs[29].input(45.706451,126.622653);
+        Vexs[30].input(45.706268,126.621644);
+        Vexs[31].input(45.706223,126.621306);
+        Vexs[32].input(45.706893,126.621156);
+        Vexs[33].input(45.707129,126.621119);
+        Vexs[34].input(45.707159,126.621483);
+        Vexs[35].input(45.706833,126.620518);
+        Vexs[36].input(45.707189,126.620453);
+        Vexs[37].input(45.705889,126.621381);
+        Vexs[38].input(45.705803,126.620775);
+        Vexs[39].input(45.705503,126.620845);
+        Vexs[40].input(45.705728,126.620223);
+        Vexs[41].input(45.705458,126.620201);
+        Vexs[42].input(45.706743,126.619611);
+        Vexs[43].input(45.706627,126.618528);
+        Vexs[44].input(45.706301,126.618613);
+        Vexs[45].input(45.705972,126.618699);
+        Vexs[46].input(45.705867,126.617557);
+        Vexs[47].input(45.705818,126.617063);
+        Vexs[48].input(45.706455,126.616924);
+        Vexs[49].input(45.705507,126.618807);
+        Vexs[50].input(45.708227,126.620899);
+        Vexs[51].input(45.707893,126.620325);
+        Vexs[52].input(45.707526,126.616693);
+        Vexs[53].input(45.706279,126.615105);
+        Vexs[54].input(45.706316,126.615534);
 
 
         for(int i=0 ; i<this.VexsNum ; i++){
@@ -159,6 +216,47 @@ public class Graph {
         this.setEdg(23, 25, 15);
 
         this.setEdg(24, 27, 55);                                   //一号楼k13
+
+        this.setEdg(15, 28, 50);
+        this.setEdg(28, 29, 60);
+        this.setEdg(29, 30, 88);
+        this.setEdg(30, 31, 28);
+        this.setEdg(31, 37, 36);
+        this.setEdg(37, 38, 49);
+        this.setEdg(38, 39, 36);
+        this.setEdg(38, 40, 45);
+        this.setEdg(40, 41, 40);
+        this.setEdg(41, 49, 95);
+        this.setEdg(40, 49, 118);
+        this.setEdg(49, 45, 55);
+        this.setEdg(44, 45, 36);
+        this.setEdg(43, 44, 36);
+        this.setEdg(42, 43, 85);
+        this.setEdg(42, 35, 80);
+        this.setEdg(35, 32, 50);
+        this.setEdg(32, 31, 77);
+        this.setEdg(32, 33, 25);
+        this.setEdg(33, 34, 30);
+        this.setEdg(34, 14, 170);
+        this.setEdg(33, 50, 125);
+        this.setEdg(50, 9, 28);
+        this.setEdg(50, 10, 30);
+        this.setEdg(35, 36, 50);
+        this.setEdg(36, 51, 75);
+        this.setEdg(51, 22, 40);
+        this.setEdg(51, 9, 40);
+        this.setEdg(7, 42, 55);
+        this.setEdg(43, 24, 120);
+        this.setEdg(45, 46, 66);
+        this.setEdg(46, 47, 62);
+        this.setEdg(47, 48, 72);
+        this.setEdg(43, 48, 128);
+        this.setEdg(48, 52, 120);
+        this.setEdg(52, 3, 66);
+        this.setEdg(52, 2, 144);
+        this.setEdg(54, 48, 108);
+        this.setEdg(53, 54, 35);
+        this.setEdg(53, 2, 118);
 
     }
 

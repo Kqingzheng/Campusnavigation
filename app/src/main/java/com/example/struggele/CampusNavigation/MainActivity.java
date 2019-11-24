@@ -1,4 +1,4 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements LocationSource, A
 
         MyLocationStyle myLocationStyle = new MyLocationStyle();
         // 设置圆形的边框颜色
-        myLocationStyle.strokeColor(Color.argb(255, 0, 255, 255));
+        myLocationStyle.strokeColor(Color.argb(0, 0, 255, 255));
         // 设置圆形的填充颜色
-        myLocationStyle.radiusFillColor(Color.argb(100, 26, 141, 31));// 设置圆形的填充颜色
+        myLocationStyle.radiusFillColor(Color.argb(0, 26, 141, 31));// 设置圆形的填充颜色
 
         //获取地图控件引用
         mapView = (MapView) findViewById(R.id.map);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements LocationSource, A
             //设置显示定位按钮 并且可以点击
             UiSettings settings = aMap.getUiSettings();
             aMap.setLocationSource(this);//设置了定位的监听
-
+            //aMap.setMapType(AMap.MAP_TYPE_NORMAL);
             aMap.setMyLocationStyle(myLocationStyle);
 
             // 是否显示定位按钮

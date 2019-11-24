@@ -6,17 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".AnimationActivity"
     android:id="@+id/activity_animation"
-    android:background="@drawable/heida3">
-    <TextView
-        android:id="@+id/ani_textview"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/shape_4"
-        android:text="欢迎来到小小黑大"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:textColor="@color/color27"/>
+    android:background="@color/colorWhite">
+    <!--<TextView-->
+        <!--android:id="@+id/ani_textview"-->
+        <!--android:layout_width="300dp"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginLeft="50dp"-->
+        <!--android:layout_marginTop="100dp"-->
+        <!--android:background="@drawable/shape_4"-->
+        <!--android:text="欢迎来到小小黑大"-->
+        <!--android:textSize="30dp"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="@color/color27"/>-->
+    <ImageView
+        android:id="@+id/animaator-image"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/icon1"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
 
 </RelativeLayout>

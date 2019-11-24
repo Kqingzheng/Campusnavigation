@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.struggele.campus_navigation">
+    package="com.example.struggele.CampusNavigation">
     <!-- 用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 用于访问GPS定位 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于获取运营商信息，用于支持提供运营商信息相关的接口 -->
@@ -18,23 +18,23 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:name=".MyApplication"
+        android:name="com.example.struggele.CampusNavigation.MyApplication"
         android:allowBackup="true"
-        android:icon="@drawable/myapp1"
+        android:icon="@drawable/icon1"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <!--Android9.0连接bmob-->
-        <activity android:name=".Main8Activity"></activity>
-        <activity android:name=".Main7Activity" />
-        <activity android:name=".Main6Activity" />
-        <activity android:name=".Main5Activity" />
+        <activity android:name="com.example.struggele.CampusNavigation.Main8Activity"></activity>
+        <activity android:name="com.example.struggele.CampusNavigation.Main7Activity" />
+        <activity android:name="com.example.struggele.CampusNavigation.Main6Activity" />
+        <activity android:name="com.example.struggele.CampusNavigation.Main5Activity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.example.struggele.campus_navigation.fileprovider"
+            android:authorities="com.example.struggele.CampusNavigation.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -42,22 +42,22 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
-        <activity android:name=".Main4Activity" />
-        <activity android:name=".GuideActivity" />
+        <activity android:name="com.example.struggele.CampusNavigation.Main4Activity" />
+        <activity android:name="com.example.struggele.CampusNavigation.GuideActivity" />
         <activity
-            android:name=".Main3Activity"
+            android:name="com.example.struggele.CampusNavigation.Main3Activity"
             android:label="历史上的今天" />
         <activity
-            android:name=".Main2Activity"
+            android:name="com.example.struggele.CampusNavigation.Main2Activity"
             android:label="小小黑大" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".RegistActivity" />
+        <activity android:name="com.example.struggele.CampusNavigation.LoginActivity" />
+        <activity android:name="com.example.struggele.CampusNavigation.RegistActivity" />
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="com.example.struggele.campus_navigation.BmobContentProvider" />
+            android:authorities="com.example.struggele.CampusNavigation.BmobContentProvider" />
 
-        <activity android:name=".AnimationActivity">
+        <activity android:name="com.example.struggele.CampusNavigation.AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,12 +67,14 @@
 
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="2ff15d8732bf14696e4f3b3707c16494" />
+            android:value="17e921c150c570997d7b4a0f7e340c92" />
 
         <service android:name="com.amap.api.location.APSService" />
 
-        <activity android:name=".MainActivity" />
-        <activity android:name=".InformationActivity" />
+        <activity android:name="com.example.struggele.CampusNavigation.MainActivity" >
+
+        </activity>
+        <activity android:name="com.example.struggele.CampusNavigation.InformationActivity" />
     </application>
 
 </manifest>

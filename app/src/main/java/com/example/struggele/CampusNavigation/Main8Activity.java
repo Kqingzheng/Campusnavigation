@@ -1,23 +1,27 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class Main6Activity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main8Activity extends AppCompatActivity {
+    private long firstTime = 0;//判断退出程序
     WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main6);
+        setContentView(R.layout.activity_main8);
+//List<String> s=new ArrayList<String>();
         webView=(WebView)findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://weibo.com/HLJU?sudaref=www.baidu.com&display=0&retcode=6102&is_hot=1");
+        webView.setWebViewClient(new MyWebViewClient());
+        webView.loadUrl("http://www.baidu.com");
     }
     /**
      * 防止有 URL Scheme 跳转协议类型的url 导致webView加载网页失败
@@ -41,13 +45,4 @@ public class Main6Activity extends AppCompatActivity {
             }
         }
     }
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK&&webView.canGoBack()){
-            webView.goBack();//返回上个页面
-            return true;
-        }
-        return super.onKeyDown(keyCode, event);//退出整个应用程序
-    }
 }
-

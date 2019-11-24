@@ -1,4 +1,4 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -8,16 +8,16 @@ import android.view.KeyEvent;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-public class Main5Activity extends AppCompatActivity {
+public class Main6Activity extends AppCompatActivity {
     WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main5);
+        setContentView(R.layout.activity_main6);
         webView=(WebView)findViewById(R.id.webview);
         webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new MyWebViewClient());
-        webView.loadUrl("http://www.hlju.edu.cn/");
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://weibo.com/HLJU?sudaref=www.baidu.com&display=0&retcode=6102&is_hot=1");
     }
     /**
      * 防止有 URL Scheme 跳转协议类型的url 导致webView加载网页失败
@@ -49,7 +49,5 @@ public class Main5Activity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);//退出整个应用程序
     }
-
-
-
 }
+

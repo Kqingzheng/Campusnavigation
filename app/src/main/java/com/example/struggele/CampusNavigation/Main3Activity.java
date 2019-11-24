@@ -1,4 +1,4 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.os.Build;
 import android.os.Handler;
@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Menu;
-import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
 
 import com.google.gson.Gson;

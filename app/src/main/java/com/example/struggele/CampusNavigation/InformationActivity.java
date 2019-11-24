@@ -1,8 +1,9 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -64,6 +65,17 @@ public class InformationActivity extends AppCompatActivity {
         dataList.add("4号教学楼");
         dataList.add("C区游泳馆");
         dataList.add("艺术楼");
+
+        dataList.add("B区超市");
+        dataList.add("排球场");
+        dataList.add("B食堂");
+        dataList.add("化学楼");
+        dataList.add("生命楼");
+        dataList.add("农学楼");
+        dataList.add("A食堂");
+        dataList.add("新图书馆");
+        dataList.add("博物馆");
+        dataList.add("网球场");
 
         //下拉框填充
         myplace.attachDataSource(dataList);
@@ -158,6 +170,46 @@ public class InformationActivity extends AppCompatActivity {
                         x = 45.707387;//(126.628135,45.707387);
                         y = 126.628135;
                         break;
+                    case 15:
+                        x = 45.706451;//45.706451,126.622653;
+                        y = 126.622653;
+                        break;
+                    case 16:
+                        x = 45.706268;//45.706268,126.621644;
+                        y = 126.621644;
+                        break;
+                    case 17:
+                        x = 45.707159;//(45.707159,126.621483);
+                        y = 126.621483;
+                        break;
+                    case 18:
+                        x = 45.707189;//45.707189,126.620453;
+                        y = 126.620453;
+                        break;
+                    case 19:
+                        x = 45.705503;//45.705503,126.620845
+                        y = 126.620845;
+                        break;
+                    case 20:
+                        x = 45.705458;//45.705458,126.620201;
+                        y = 126.620201;
+                        break;
+                    case 21:
+                        x = 45.706743;//(45.706743,126.619611
+                        y = 126.619611;
+                        break;
+                    case 22:
+                        x = 45.706301;//45.706301,126.618613;
+                        y = 126.618613;
+                        break;
+                    case 23:
+                        x = 45.705867;//(45.705867,126.617557
+                        y = 126.617557;
+                        break;
+                    case 24:
+                        x = 45.706316;//45.706316,126.615534
+                        y = 126.615534;
+                        break;
 
                 }
             }
@@ -246,9 +298,68 @@ public class InformationActivity extends AppCompatActivity {
                         x1 = 45.707387;//(126.628135,45.707387);
                         y1 = 126.628135;
                         break;
+                    case 15:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.706451;//45.706451,126.622653;
+                        y1 = 126.622653;
+                        break;
+                    case 16:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.706268;//45.706268,126.621644;
+                        y1 = 126.621644;
+                        break;
+                    case 17:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.707159;//(45.707159,126.621483);
+                        y1 = 126.621483;
+                        break;
+                    case 18:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.707189;//45.707189,126.620453;
+                        y1 = 126.620453;
+                        break;
+                    case 19:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.705503;//45.705503,126.620845
+                        y1 = 126.620845;
+                        break;
+                    case 20:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.705458;//45.705458,126.620201;
+                        y1 = 126.620201;
+                        break;
+                    case 21:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.706743;//(45.706743,126.619611
+                        y1 = 126.619611;
+                        break;
+                    case 22:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.706301;//45.706301,126.618613;
+                        y1 = 126.618613;
+                        break;
+                    case 23:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.705867;//(45.705867,126.617557
+                        y1 = 126.617557;
+                        break;
+                    case 24:
+                        webView.loadUrl(graph.find("14"));// webView.loadUrl("http://www.hlju.edu.cn/info/1051/1072.htm");//艺术楼
+                        x1 = 45.706316;//45.706316,126.615534
+                        y1 = 126.615534;
+                        break;
+
                 }
             }
         });
+    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if(keyCode == KeyEvent.KEYCODE_BACK&&webView.canGoBack()){
+            webView.goBack();//返回上个页面
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);//退出整个应用程序
     }
     private void location(int who ,double x ,double y)
     {

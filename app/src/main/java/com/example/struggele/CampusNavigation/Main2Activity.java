@@ -1,7 +1,6 @@
-package com.example.struggele.campus_navigation;
+package com.example.struggele.CampusNavigation;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -10,24 +9,19 @@ import android.net.Uri;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.multidex.MultiDexApplication;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -36,7 +30,6 @@ import java.io.File;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import jp.wasabeef.glide.transformations.BlurTransformation;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class Main2Activity extends AppCompatActivity implements View.OnClickListener, EasyPermissions.PermissionCallbacks {

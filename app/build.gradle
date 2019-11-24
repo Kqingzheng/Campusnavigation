@@ -6,7 +6,7 @@ android{
     buildToolsVersion "28.0.3"  //导入项目不匹配可以调version
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "com.example.struggele.campus_navigation"
+        applicationId "com.example.struggele.CampusNavigation"
         minSdkVersion 15
         targetSdkVersion 28
         multiDexEnabled true
@@ -23,6 +23,11 @@ android{
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions {
+
+        exclude 'assets/location_map_gps_locked.png'
+        exclude 'assets/location_map_gps_3d.png'
     }
 }
 

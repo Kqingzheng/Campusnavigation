@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:textTint="@color/colorAccent">
+        app:textTint="@color/colorDark">
 
     </org.angmarch.views.NiceSpinner>
 
@@ -41,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myplace"
-        app:textTint="@color/colorAccent" />
+        app:textTint="@color/colorDark" />
 
     <WebView
         android:id="@+id/mywebview"
